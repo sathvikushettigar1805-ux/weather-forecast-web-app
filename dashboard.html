@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Weather Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h1>🌤 Weather Dashboard</h1>
+
+<div class="search">
+
+<input type="text" id="city" placeholder="Enter City Name">
+
+<button onclick="getWeather()">
+<i class="fa-solid fa-magnifying-glass"></i>
+Search
+</button>
+
+<button class="small-btn" onclick="getLocation()">
+<i class="fa-solid fa-location-dot"></i>
+My Location
+</button>
+
+<button class="small-btn" onclick="addFavorite()">
+<i class="fa-solid fa-star"></i>
+Favorite
+</button>
+
+<button class="small-btn" onclick="toggleTheme()" id="themeButton">
+<i class="fa-solid fa-moon"></i>
+Dark Mode
+</button>
+
+</div>
+
+<div class="favorites-section">
+<h2>⭐ Favorite Cities</h2>
+<div id="favorites"></div>
+</div>
+
+<div id="datetime"></div>
+
+<div id="message"></div>
+
+<div id="loader" class="loader" style="display:none;">
+<div class="spinner"></div>
+<p>Fetching Weather...</p>
+</div>
+
+<div class="weatherIcon">
+
+<img id="icon" src="" alt="Weather Icon">
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h2>🌡 Temperature</h2>
+<p id="temp">-- °C</p>
+<div class="unit-buttons">
+<button onclick="setCelsius()">°C</button>
+<button onclick="setFahrenheit()">°F</button>
+</div>
+</div>
+
+<div class="card">
+<h2>☁ Weather</h2>
+<p id="condition">----------</p>
+</div>
+
+<div class="card">
+<h2>💧 Humidity</h2>
+<p id="humidity">--%</p>
+</div>
+
+<div class="card">
+<h2>🌬 Wind Speed</h2>
+<p id="wind">-- m/s</p>
+<p id="windDirection">🧭 --</p>
+</div>
+
+<div class="card">
+<h2>🌡 Feels Like</h2>
+<p id="feels">-- °C</p>
+</div>
+
+<div class="card">
+<h2>📊 Pressure</h2>
+<p id="pressure">---- hPa</p>
+</div>
+
+<div class="card">
+<h2>👁 Visibility</h2>
+<p id="visibility">---- km</p>
+</div>
+
+<div class="card">
+<h2>📍 Country</h2>
+<p id="country">----</p>
+</div>
+
+<div class="card">
+<h2>🌅 Sunrise</h2>
+<p id="sunrise">--:--</p>
+</div>
+
+</div>
+
+<div class="forecast-section">
+<h2>📅 5-Day Forecast</h2>
+<div id="forecast" class="forecast-container"></div>
+</div>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
